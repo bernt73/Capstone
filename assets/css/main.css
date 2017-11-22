@@ -3064,11 +3064,23 @@
 		width: 100%;
 		z-index: 10001;
 	}
-
-		#header .logo {
+		#header .img {
 			display: inline-block;
 			height: inherit;
 			left: 1.25em;
+			line-height: inherit;
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			top: 0;
+			color: #fff;
+			font-size: 1.25em;
+			text-decoration: none;
+		}
+		#header .logo {
+			display: inline-block;
+			height: inherit;
+			left: 3.25em;
 			line-height: inherit;
 			margin: 0;
 			padding: 0;
