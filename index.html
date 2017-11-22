@@ -14,7 +14,7 @@
 
 		<!-- Header -->
 			<header id="header">
-				<img src="images/Bottlewithtext.png" class="img" width="30" height="120" />
+				<img src="images/Bottlewithtext.png" class="img" width="40" height="120" />
 				<a href="index.html" class="logo" >Wine Reviews <strong>WRITER</strong></a>
 				<nav>
 					<a href="#menu">Menu</a>
@@ -43,7 +43,7 @@
 		<!-- One -->
 			<article id="one" class="post style1">
 				<div class="image">
-					<video width="750" height="700" data-position="75% center" autoplay controls loop>
+					<video width="800" height="750" data-position="75% center" autoplay controls loop>
 						<source src="video/winetextanimate1.m4v" type="video/mp4">
 					Your browser does not support the video tag.
 					</video>
@@ -75,7 +75,7 @@
 		<!-- Two -->
 			<article id="two" class="post invert style1 alt">
 				<div class="image">
-					<img src="images/Dataset.png" width="650" height="700" data-position="110% center" />
+					<img src="images/Dataset.png" width="500" height="500" data-position="100% center" />
 				</div>
 				<div class="content">
 					<div class="inner">
@@ -100,14 +100,14 @@
 		<!-- Three -->
 			<article id="three" class="post style2">
 				<div class="image">
-					<img src="images/Textreviewsamples.png" width="450" height="700" data-position="100% center" />
+					<img src="images/Textreviewsamples.png" width="500" height="500" data-position="100% center" />
 				</div>
 				<div class="content">
 					<div class="inner">
 						<header>
 							<h3><a >Samples of the review text corpus</a></h3>
 						</header>
-						<p>As you can see from the text corpus of wine reviews, the text is generally quite clean,
+						<p>As you can see from wine reviews on the right, the text is generally quite clean,
 							with simple sentence structures, little to no connection between sentences in each document and
 							hence little long-term dependencies. Only those words that contain diacritical marks
 							need to be cleaned up. There are a number of them because many of the wineries are from Europe, and some
@@ -126,7 +126,7 @@
 		<!-- Four -->
 			<article id="four" class="post invert style2 alt">
 				<div class="image">
-					<img src="images/TextPreprocessingandModels.png" width="450" height="600" data-position="100% center" />
+					<img src="images/TextPreprocessingandModels.png" width="500" height="500" data-position="100% center" />
 				</div>
 				<div class="content">
 					<div class="inner">
@@ -137,7 +137,9 @@
 						to convert those special characters into Ascii, followed by using the NLTK (Natural Language Tool Kit) package
 						to find out the distribution of the most frequent words, and then using the VADER package to perform sentiment
 						analysis on the text corpus. <br><br>
-						Only after I had a slightly better understanding of the word distribution and the sentiment analysis, then I proceeded
+						Only after I had a better understanding of the word distribution and the sentiment analysis, then I proceeded to
+						fit models to perform Regression on wine prices, and Classification of high or low prices as well as variety. Next, I
+						used Word2Vec to extract contextual information of the words and study the semantics of the
 						</p>
 					</div>
 					<div class="postnav">
@@ -150,7 +152,59 @@
 		<!-- Five -->
 			<article id="five" class="post style3">
 				<div class="image">
-					<video width="750" height="700" data-position="75% center" autoplay controls loop>
+					<video width="800" height="750" data-position="75% center" autoplay controls loop>
+						<source src="video/nltkvader.m4v" type="video/mp4">
+					Your browser does not support the video tag.
+					</video>
+				</div>
+				<div class="content">
+					<div class="inner">
+						<header>
+							<h4><a>Word frequency distribution and sentiment analysis</a></h4>
+						</header>
+						<p>We can see that the top 3 most frequently appearing words are "wine", "flavor" and "fruit". <br><br>
+							The large majority of the reviews have either Positive or Neutral sentiment scores. Very few have negative
+							scores. This is because only those reviews with points between 80 to 100 are provided in this dataset. Hence we have a text
+							corpus that is pretty narrow in sentiment, and biased towards highly rated wines.
+						</p>
+
+					</div>
+					<div class="postnav">
+						<a href="#four" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#six" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
+					</div>
+				</div>
+			</article>
+
+			<!-- Six -->
+			<article id="six" class="post invert style3 alt">
+				<div class="image">
+					<video width="800" height="750" data-position="75% center" autoplay controls loop>
+						<source src="video/Regression.m4v" type="video/mp4">
+					Your browser does not support the video tag.
+					</video>
+				</div>
+				<div class="content">
+					<div class="inner">
+						<header>
+							<h4><a>Regression results</a></h4>
+						</header>
+						<p>--------
+						</p>
+
+					</div>
+					<div class="postnav">
+						<a href="#four" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#six" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
+					</div>
+				</div>
+			</article>
+
+
+			<!-- Seven -->
+			<article id="five" class="post style3">
+				<div class="image">
+					<video width="800" height="750" data-position="75% center" autoplay controls loop>
 						<source src="video/Chartoascii.m4v" type="video/mp4">
 					Your browser does not support the video tag.
 					</video>
@@ -216,7 +270,7 @@
 			<!-- Eight -->
 			<article id="seven" class="post invert style3 alt">
 				<div class="image">
-					<img src="images/Textreviewsamples.png" alt="" data-position="80% center" />
+					<img src="images/.png" width="250" height="200" data-position="100% center" />
 				</div>
 				<div class="content">
 					<div class="inner">
