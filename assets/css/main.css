@@ -3302,7 +3302,7 @@
 		color: rgba(255, 255, 255, 0.75);
 		text-align: center;
 		cursor: default;
-		padding: 10em 4em 9em 4em;
+		padding: 9em 4em 5em 2em;
 	}
 
 		#banner input, #banner select, #banner textarea {
@@ -4429,7 +4429,7 @@
 		@media screen and (max-width: 1280px) {
 
 			.post .content {
-				padding: 4em;
+				padding: 3em;
 			}
 
 				.post .content .postnav {
