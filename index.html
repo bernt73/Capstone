@@ -227,24 +227,46 @@
 						<header>
 							<h3><a>Classification results</a></h3>
 						</header>
-						<p style="font-size:14px;text-align:justify;">Above, we have mixed all the words in the wine description together with all the other categorical
+						<p style="font-size:16px;text-align:justify;">Above, we have mixed all the words in the wine description together with all the other categorical
 							features like country, variety, region in order to predict wine prices. Now, we just focus on the description
 							words to see what are the important words that help distinguish high points from low points or high prices from
 							low prices. This would also allow us to understand more about this wine text corpus.<br>
 							For this classification task, I chose a price threshold of >$200 to separate high prices from low prices, and a points threshold >90 to
-							separate high points from low points. As for variety, due to the large no. of variety classes (632), we shall try to classify these top 3 varieties of wine first to see if we can get any logical result. Besides the fact that these 3 varieties are the top 3 in terms of numbers, they are also distinctly different in terms of colour and taste - Chardonnay being white, Pinot Noir light red, and Cabernet Sauvignon being dark red. If our classifiers cannot even tell them apart, we can forget about classifying the rest of the varieties.
+							separate high points from low points. As for variety, due to the large no. of variety classes (632), we shall try to classify these top 3 varieties of wine first to see if we can get any logical result. Besides the fact that these 3 varieties are the top 3 in terms of numbers, they are also distinctly different in terms of colour and taste - Chardonnay being white, Pinot Noir light red, and Cabernet Sauvignon being dark red. If our classifiers cannot even tell them apart, we can forget about classifying the rest of the varieties.<br><br>
+							The classifiers have clearly identified words such as <font color='red'>"years", "age", "rich", "long" and "powerful" </font>as distinctive words that associate with high points AND high prices.
+							This makes a lot of sense as it's common knowledge that wines cost higher, taste better, and valued more as they age with time.<br>
 						</p>
 
-					</div>
-					<div class="postnav">
-						<a href="#six" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
-						<a href="#eight" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
 					</div>
 				</div>
 			</article>
 
-
 			<!-- Eight -->
+			<article id="seven" class="post style3">
+
+					<div style="width: 1300px; height: 300px;margin-right: 80px;margin-left: 40px">
+						<header>
+							<h3><a>Variety classification</a></h3>
+						</header>
+						<p style="font-size:15px;text-align:justify;">As for wine variety, although the classification scores are not that bad, I still feel that the data present in this dataset is not sufficient for the models to classify wine
+						varieties with high accuracy and precision. Just based on review text, the models are only able to draw vague relationships to fruits and similarity with other varieties at best.
+						If we consider all the factors affecting the varieties of wine, we will understand why this data-set is lacking in a lot of information:
+						<br><br>
+						1. Many of the varieties are close relations of one another in terms of genealogy (e.g. Pinot Noir, Pinot Grigio, Pinot Blanc), but yet they have very different colors and properties. They may be grown in the same region, but may also be cultivated in other geographically very different regions.
+						<br><br>
+						2. Nearly all the varieties can have different flavors of fruits as a result of different degrees or process of aging. Genealogically different species of grapes like Chardonnay and Pinot Blanc can thus have similar citrus, or pear flavors depending on their age.
+						<br><br>
+						3. Due to historical and geographical reasons, some of the names of grapes or their corresponding wines can be different depending on the country of origin. For example, in France, it's called Pinot Gris, while in Italy it's called Pinot Grigio. They are in fact the same grape, just grown in different places. Another example is Pinot Blanc in France, and it's called Pinot Bianco in Italy. Without explicitly declaring such naming differences in the dataset, models will always mix them up.
+						<br><br>
+						4. Some of the varieties can be so close in taste, scent and color that even domain experts themselves cannot tell apart. In such cases, only minute chemical property differences or even isotopic distribution differences can differentiate them. This means that only if we can somehow get those chemical and physical properties data for the wine varieties in this data-set to supplement this review and geo-location data, can we have more confidence in getting the model to classify varieties more accurately.
+						<br><br>
+						5. Due to subtle differences in climate conditions, the quality of harvest of a particular grape variety in one year, could be slightly different from another year. This may be reflected in the flavor or undertone of the final wine product. Hence, the domain expert may be able to detect such subtle differences in a blind tasting session, but on consultation with the wine producer and getting more information about the harvests, he may then understand why they are actually from the same grape. Such harvest data is not collected in the data-set, but is still an important factor in classifying wine variety.
+						</p>
+					</div>
+
+			</article>
+
+			<!-- NineEight -->
 			<article id="eight" class="post invert style3 alt">
 				<div class="image" style="width: 750px; height: 600px;margin-top: 30px">
 					<img src="images/word2vec.png"  data-position="100% right" />
