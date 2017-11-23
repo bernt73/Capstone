@@ -55,7 +55,7 @@
 							<h3><a >Background</a></h3>
 
 						</header>
-						<p>Wine has been produced for thousands of years. The earliest known winery is the 6100-year-old Areni-1 winery in Armenia. Throughout history, wine has been consumed for its intoxicating effects.
+						<p style="text-align:justify;">Wine has been produced for thousands of years. The earliest known winery is the 6100-year-old Areni-1 winery in Armenia. Throughout history, wine has been consumed for its intoxicating effects.
 
 							Wine tasting is the sensory examination and evaluation of wine by experts. A wine sommelier, also known as "wine steward", is such a specialist wine expert in charge of developing a restaurant's wine list, and assisting customers with their selections (especially food-wine pairings). A wine critic is an expert and/or journalist who tastes and reviews wines for books and magazines. Wine producers would traditionally work closely with these professions in order to create the most appropriate or appealing wine reviews in order to entice customers to purchase their wines.
 
@@ -83,7 +83,7 @@
 							<h3><a >The data set</a></h3>
 
 						</header>
-						<p> This data set was obtained from Kaggle. It has only 11 columns to start with,
+						<p style="text-align:justify;"> This data set was obtained from Kaggle. It has only 11 columns to start with,
 							many of them are location related info in text format. And only
               						2 columns with numeric data - price and points. Altogether there are > 150K rows in this data set, all with
 							wine reviews.	Within the reviews text, there are > 6 M words.
@@ -107,7 +107,7 @@
 						<header>
 							<h3><a >Samples of the review text corpus</a></h3>
 						</header>
-						<p>As you can see from wine reviews on the right, the text is generally quite clean,
+						<p style="text-align:justify;">As you can see from wine reviews on the right, the text is generally quite clean,
 							with simple sentence structures, little to no connection between sentences in each document and
 							hence little long-term dependencies. Only those words that contain diacritical marks
 							need to be cleaned up. There are a number of them because many of the wineries are from Europe, and some
@@ -133,7 +133,7 @@
 						<header>
 							<h3><a >Workflow</a></h3>
 						</header>
-						<p>As shown on the left, the work flow that I adopted to process the text corpus started with using Unidecode
+						<p style="text-align:justify;">As shown on the left, the work flow that I adopted to process the text corpus started with using Unidecode
 						to convert those special characters into Ascii, followed by using the NLTK (Natural Language Tool Kit) package
 						to find out the distribution of the most frequent words, and then using the VADER package to perform sentiment
 						analysis on the text corpus. <br><br>
@@ -162,7 +162,7 @@
 						<header>
 							<h4><a>Word frequency distribution and sentiment analysis</a></h4>
 						</header>
-						<p>We can see that the top 3 most frequently appearing words are "wine", "flavor" and "fruit". <br><br>
+						<p style="text-align:justify;">We can see that the top 3 most frequently appearing words are "wine", "flavor" and "fruit". <br><br>
 							The large majority of the reviews have either Positive or Neutral sentiment scores. Very few have negative
 							scores. This is because only those reviews with points between 80 to 100 are provided in this dataset. Hence we have a text
 							corpus that is pretty narrow in sentiment, and biased towards highly rated wines.
@@ -189,7 +189,7 @@
 						<header>
 							<h4><a>Regression results</a></h4>
 						</header>
-						<p style="font-size:15px">Now that we have a better understanding of the review text, let's try to put together all the
+						<p style="font-size:15px;text-align:justify;" >Now that we have a better understanding of the review text, let's try to put together all the
 							features and try to predict the price of the wine. For the features of Country, Province, Variety,
 							Winery, and Region, we can use Label Encoder and OneHotEncoder to convert them to dummy columns.<br>
 							As for the Reviews column, we will use TFIDF to help us filter the words and retain significant
@@ -280,7 +280,7 @@
 			</article>
 
 			<!-- Ten -->
-			<article id="Ten" class="post invert style3 alt">
+			<article id="ten" class="post invert style3 alt">
 				<div class="image">
 					<video width="800" height="750" data-position="75% center"  controls loop>
 						<source src="video/Chartoascii.m4v" type="video/mp4">
@@ -292,7 +292,7 @@
 						<header>
 							<h3><a>Training with characters</a></h3>
 						</header>
-						<p>In order to train a neural network on generating text, we have to think of how to provide input to it and how to interpret its output.
+						<p style="text-align:justify;">In order to train a neural network on generating text, we have to think of how to provide input to it and how to interpret its output.
 							We have to first break up each string of text of each document into individual characters, encode each character in Ascii code, and then
 							One-Hot vectorize each Ascii encoded character. It is these One-Hot vectors that we input to the neural network, and it will produce
 							an output that is also in this One-Hot vector form. Hence to decode it, we will have to reverse the process to convert it to Ascii code first, followed <body>
@@ -309,8 +309,8 @@
 				</div>
 			</article>
 
-		<!-- Six -->
-			<article id="six" class="post invert style3 alt">
+		<!-- Eleven -->
+			<article id="eleven" class="post style3">
 				<div class="image">
 					<video width="750" height="700" data-position="75% center" controls loop>
 						<source src="video/rnn_unfolding.m4v" type="video/mp4">
@@ -322,7 +322,7 @@
 						<header>
 							<h3><a >Recurrent Neural Net Model Architecture</a></h3>
 						</header>
-						<p>Each RNN unit takes in a One-Hot vector representing a character as input, concatenates with the previous state H<sub>t−1</sub>
+						<p style="text-align:justify;">Each RNN unit takes in a One-Hot vector representing a character as input, concatenates with the previous state H<sub>t−1</sub>
 							then goes through a series of computations by the reset and update gates and generates an output state. This RNN unfolds over
 							the length of each sequence, taking in one character at a time, and at the end of each sequence, it predicts the next character
 							after the end of that sequence. This predicted output is subjected to softmax computation to generate a probability, and the
@@ -336,8 +336,8 @@
 				</div>
 			</article>
 
-			<!-- Seven -->
-			<article id="seven" class="post style3">
+			<!-- Twelve -->
+			<article id="twelve" class="post invert style3 alt">
 				<div class="image">
 					<video width="750" height="700" data-position="75% center" controls loop>
 						<source src="video/trainingresults.m4v" type="video/mp4">
@@ -364,25 +364,25 @@
 				</div>
 			</article>
 
-			<!-- Eight -->
-			<article id="seven" class="post invert style2 alt">
-				<div class="image" style="width: 800px; height: 500px;">
-					<img src="images/finalslide.png"  style="image-resolution:1440dpi;" data-position="100% right" />
+			<!-- Thirteen -->
+			<article id="thirteen" class="post style2">
+				<div class="image" style="width: 800px; height: 500px;" align="middle">
+					<img src="images/finalslide.png"  style="image-resolution:1440dpi;"  data-position="100% middle" />
 				</div>
 				<div class="content">
 					<div class="inner">
 						<header>
 							<h3><a >Conclusion and future work</a></h3>
 						</header>
-						<p>Overall, I'm pleased to see that my model is able to spell English words properly at the end, and also understands punctuation positions.
+						<p style="text-align:left;">Overall, I'm pleased to see that my model is able to spell English words properly at the end, and also understands punctuation positions.
 							Even the sentence structure is quite complete too. While the content of the text may be a little limited, this is after all largely dependent
 							on the quality of the text corpus and I think it's not too bad for an initial attempt. Further processing and shaping of the text reviews is
 							required to improve the quality of the text generation for sure.<br><br>
 							Future work:
-							<li>Increasing the input sequence length and/or number of hidden layers to improve accuracy.</li>
-							<li>Using the Word2Vec model to create a word embedding layer to the RNN to generate word sequences instead of character sequences.</li>
-							<li>Filter out those reviews with Positive sentiment scores to let the neural net learn only 'biased', but 'attractive' text reviews.</li>
-							<li>Using the RNN with word embeddings layer to try to classify the 632 varieties of wine. </li>
+							<li style="text-align:left;">Increasing the input sequence length and/or number of hidden layers to improve accuracy.</li>
+							<li style="text-align:left;">Using the Word2Vec model to create a word embedding layer to the RNN to generate word sequences instead of character sequences.</li>
+							<li style="text-align:left;">Filter out those reviews with Positive sentiment scores to let the neural net learn only 'biased', but 'attractive' text reviews.</li>
+							<li style="text-align:left;">Using the RNN with word embeddings layer to try to classify the 632 varieties of wine. </li>
 
 						</p>
 
