@@ -125,7 +125,7 @@
 
 		<!-- Four -->
 			<article id="four" class="post invert style2 alt">
-				<div class="image" style="width: 1200px; height: 600px;">
+				<div class="image" style="width: 1000px; height: 550px;">
 					<img src="images/TextPreprocessingandModels.png" data-position="100% center" />
 				</div>
 				<div class="content">
@@ -187,7 +187,7 @@
 				<div class="content">
 					<div class="inner">
 						<header>
-							<h4><a>Regression results</a></h4>
+							<h3><a>Regression results</a></h3>
 						</header>
 						<p style="font-size:15px;text-align:justify;" >Now that we have a better understanding of the review text, let's try to put together all the
 							features and try to predict the price of the wine. For the features of Country, Province, Variety,
@@ -223,9 +223,14 @@
 				<div class="content">
 					<div class="inner">
 						<header>
-							<h4><a>Classification results</a></h4>
+							<h3><a>Classification results</a></h3>
 						</header>
-						<p>
+						<p style="font-size:14px;text-align:justify;">Above, we have mixed all the words in the wine description together with all the other categorical
+							features like country, variety, region in order to predict wine prices. Now, we just focus on the description
+							words to see what are the important words that help distinguish high points from low points or high prices from
+							low prices. This would also allow us to understand more about this wine text corpus.<br>
+							For this classification task, I chose a price threshold of >$200 to separate high prices from low prices, and a points threshold >90 to
+							separate high points from low points. As for variety, due to the large no. of variety classes (632), we shall try to classify these top 3 varieties of wine first to see if we can get any logical result. Besides the fact that these 3 varieties are the top 3 in terms of numbers, they are also distinctly different in terms of colour and taste - Chardonnay being white, Pinot Noir light red, and Cabernet Sauvignon being dark red. If our classifiers cannot even tell them apart, we can forget about classifying the rest of the varieties.
 						</p>
 
 					</div>
@@ -245,9 +250,9 @@
 				<div class="content">
 					<div class="inner">
 						<header>
-							<h4><a>Word2Vec results</a></h4>
+							<h3><a>Word2Vec results</a></h3>
 						</header>
-						<p style="font-size:15px;text-align:justify;">Word2Vec is a class of neural network models that produces a vector for each word in the corpus that encodes its semantic
+						<p style="font-size:15px;text-align:justify;">Word2Vec is a class of neural network models that produces a vector for each word in the corpus so as to encode its semantic
 							information in an unsupervised manner. We have used TFIDF for word representation above, its scores give us some idea of a word's relative
 							importance in a document, but they do not give any insight into its semantic meaning.
 							We can use Word2Vec models to help us measure the semantic similarity between words by computing the cosine similarity between their corresponding vectors.<br><br>
@@ -274,7 +279,7 @@
 				<div class="content">
 					<div class="inner">
 						<header>
-							<h4><a>Configuring our neural network</a></h4>
+							<h3><a>Configuring our neural network</a></h3>
 						</header>
 						<p>
 						</p>
@@ -301,7 +306,10 @@
 							<h3><a>Training with characters</a></h3>
 						</header>
 						<p style="text-align:justify;">In order to train a neural network on generating text, we have to think of how to provide input to it and how to interpret its output.
-							We have to first break up each string of text of each document into individual characters, encode each character in Ascii code, and then
+							There are two types of input we can consider, characters and word embeddings. While Word2Vec model does provide a rich source of contextual information, character
+							level training is much easier to understand and visualise as compared to word embeddings. Also since we have noted that the text in this corpus is pretty clean, with
+							simple sentence structures, little to no connection between sentences in each document and hence little long-term dependencies and a narrow sentiment range, character level input makes a lot of sense.<br><br>
+							We will first break up each string of text from each document into individual characters, encode each character in Ascii code, and then
 							One-Hot vectorize each Ascii encoded character. It is these One-Hot vectors that we input to the neural network, and it will produce
 							an output that is also in this One-Hot vector form. Hence to decode it, we will have to reverse the process to convert it to Ascii code first, followed <body>
 							identifying the character that matches the Ascii code.
@@ -386,7 +394,7 @@
 							Even the sentence structure is quite complete too. While the content of the text may be a little limited, this is after all largely dependent
 							on the quality of the text corpus and I think it's not too bad for an initial attempt. Further processing and shaping of the text reviews is
 							required to improve the quality of the text generation for sure.<br><br>
-							Future work:
+							<strong>Future work:</strong>
 							<li style="text-align:left;">Increasing the input sequence length and/or number of hidden layers to improve accuracy.</li>
 							<li style="text-align:left;">Using the Word2Vec model to create a word embedding layer to the RNN to generate word sequences instead of character sequences.</li>
 							<li style="text-align:left;">Filter out those reviews with Positive sentiment scores to let the neural net learn only 'biased', but 'attractive' text reviews.</li>
