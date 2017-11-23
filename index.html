@@ -206,8 +206,8 @@
 
 					</div>
 					<div class="postnav">
-						<a href="#four" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
-						<a href="#six" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
+						<a href="#five" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#seven" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
 					</div>
 				</div>
 			</article>
@@ -230,8 +230,8 @@
 
 					</div>
 					<div class="postnav">
-						<a href="#four" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
-						<a href="#six" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
+						<a href="#six" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#eight" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
 					</div>
 				</div>
 			</article>
@@ -239,7 +239,7 @@
 
 			<!-- Eight -->
 			<article id="eight" class="post invert style3 alt">
-				<div class="image">
+				<div class="image" style="width: 750px; height: 600px;">
 					<img src="images/word2vec.png"  data-position="100% right" />
 				</div>
 				<div class="content">
@@ -247,13 +247,21 @@
 						<header>
 							<h4><a>Word2Vec results</a></h4>
 						</header>
-						<p>
+						<p style="font-size:15px;text-align:justify;">Word2Vec is a class of neural network models that produces a vector for each word in the corpus that encodes its semantic
+							information in an unsupervised manner. We have used TFIDF for word representation above, its scores give us some idea of a word's relative
+							importance in a document, but they do not give any insight into its semantic meaning.
+							We can use Word2Vec models to help us measure the semantic similarity between words by computing the cosine similarity between their corresponding vectors.<br><br>
+							After fitting Word2Vec model on the text corpus, I gave it a list of independent words such as "aroma", "taste", "price", "promise", "steak" and asked it to predict the output word which is most similar to each of them.
+							I'm pleased to find that it was able to associate "scent" -> "aroma", "sugary" -> "taste", "dollar" -> "price", "promise" -> "potential", "chop" -> "steak".<br>
+							I also gave it two distinct wine variety names "chardonnay" which is a white wine, and "cabernet" which is a red wine. The model was able to tell me a
+							list of white wine variety names such as "albarino", "grigio", "riesling", "semillon", "gris", "blanc" that are related to "chardonnay" as well as a list of red wine variety names such as
+							"merlot", "syrah", "claret", "malbec" and "sauvignon" that are related to "cabernet". This shows that the model was able to learn the colour of wine names from the context!!
 						</p>
 
 					</div>
 					<div class="postnav">
-						<a href="#four" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
-						<a href="#six" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
+						<a href="#seven" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#nine" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
 					</div>
 				</div>
 			</article>
@@ -273,8 +281,8 @@
 
 					</div>
 					<div class="postnav">
-						<a href="#four" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
-						<a href="#six" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
+						<a href="#eight" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#ten" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
 					</div>
 				</div>
 			</article>
@@ -303,8 +311,8 @@
 
 					</div>
 					<div class="postnav">
-						<a href="#four" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
-						<a href="#six" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
+						<a href="#nine" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#eleven" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
 					</div>
 				</div>
 			</article>
@@ -330,8 +338,8 @@
 							between this predicted character vector with the actual label vector.</p>
 					</div>
 					<div class="postnav">
-						<a href="#three" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
-						<a href="#five" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
+						<a href="#ten" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#twelve" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
 					</div>
 				</div>
 			</article>
@@ -358,8 +366,8 @@
 
 					</div>
 					<div class="postnav">
-						<a href="#two" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
-						<a href="#four" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
+						<a href="#eleven" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#thirteen" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
 					</div>
 				</div>
 			</article>
@@ -374,7 +382,7 @@
 						<header>
 							<h3><a >Conclusion and future work</a></h3>
 						</header>
-						<p style="text-align:left;">Overall, I'm pleased to see that my model is able to spell English words properly at the end, and also understands punctuation positions.
+						<p style="font-size:16px;text-align:left;">Overall, I'm pleased to see that my model is able to spell English words properly at the end, and also understands punctuation positions.
 							Even the sentence structure is quite complete too. While the content of the text may be a little limited, this is after all largely dependent
 							on the quality of the text corpus and I think it's not too bad for an initial attempt. Further processing and shaping of the text reviews is
 							required to improve the quality of the text generation for sure.<br><br>
@@ -388,7 +396,7 @@
 
 					</div>
 					<div class="postnav">
-						<a href="#five" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#twelve" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
 						<a href="#" class="scrolly next disabled"><span class="icon fa-chevron-down"></span></a>
 					</div>
 				</div>
