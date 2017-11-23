@@ -189,7 +189,17 @@
 						<header>
 							<h4><a>Regression results</a></h4>
 						</header>
-						<p>--------
+						<p>Now that we have a better understanding of the review text, let's try to put together all the
+							features and try to predict the price of the wine. For the features of Country, Province, Variety,
+							Winery, and Region, we can use Label Encoder and OneHotEncoder to convert them to dummy columns.<br>
+							As for the Reviews column, we will use TFIDF to help us filter the words and retain significant
+							words based on their frequency in the reviews as features and convert to word vectors.<br>
+							For the choice of Regressors, we will use 4 Regressors - Lasso, Ridge, Random Forest and Gradient Boosting Regressor.
+							Lasso and Ridge are powerful techniques generally used for creating parsimonious models in the presence of a ‘large’ number of features.
+							Random Forest is an ensemble method that applies Bagging techniques to train multiple decision trees on different parts of the same training set, and averages them with the aim of reducing variance.
+							Finally Gradient Boosting is an ensemble method that tries to fit subsequent models to the residuals of the last model in a sequential manner in order to reduce bias.
+							These 4 regressors provide a good coverage of regularization, bagging and boosting techniques to help us better understand our results.<br><br>
+							Among the 4 models, Grad Boosting gave the best accuracy scores (0.884).
 						</p>
 
 					</div>
@@ -214,7 +224,13 @@
 						<header>
 							<h3><a>Training with characters</a></h3>
 						</header>
-						<p>............
+						<p>In order to train a neural network on generating text, we have to think of how to provide input to it and how to interpret its output.
+							We have to first break up each string of text of each document into individual characters, encode each character in Ascii code, and then
+							One-Hot vectorize each Ascii encoded character. It is these One-Hot vectors that we input to the neural network, and it will produce
+							an output that is also in this One-Hot vector form. Hence to decode it, we will have to reverse the process to convert it to Ascii code first, followed <body>
+							identifying the character that matches the Ascii code.
+							</body>
+
 						</p>
 
 					</div>
@@ -238,7 +254,12 @@
 						<header>
 							<h3><a >Recurrent Neural Net Model Architecture</a></h3>
 						</header>
-						<p>............</p>
+						<p>Each RNN unit takes in a One-Hot vector representing a character as input, concatenates with the previous state H<sub>t−1</sub>
+							then goes through a series of computations by the reset and update gates and generates an output state. This RNN unfolds over
+							the length of each sequence, taking in one character at a time, and at the end of each sequence, it predicts the next character
+							after the end of that sequence. This predicted output is subjected to softmax computation to generate a probability, and the
+							argmax of the highest probability gives the most likely character candidate. Accuracy is measured by the mean of cell-wise comparison
+							between this predicted character vector with the actual label vector.</p>
 					</div>
 					<div class="postnav">
 						<a href="#three" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
