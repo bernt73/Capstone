@@ -125,8 +125,8 @@
 
 		<!-- Four -->
 			<article id="four" class="post invert style2 alt">
-				<div class="image">
-					<img src="images/TextPreprocessingandModels.png" width="500" height="500" data-position="100% center" />
+				<div class="image" style="width: 1300px; height: 700px;">
+					<img src="images/TextPreprocessingandModels.png" data-position="100% center" />
 				</div>
 				<div class="content">
 					<div class="inner">
@@ -189,7 +189,7 @@
 						<header>
 							<h4><a>Regression results</a></h4>
 						</header>
-						<p>Now that we have a better understanding of the review text, let's try to put together all the
+						<p style="font-size:15px">Now that we have a better understanding of the review text, let's try to put together all the
 							features and try to predict the price of the wine. For the features of Country, Province, Variety,
 							Winery, and Region, we can use Label Encoder and OneHotEncoder to convert them to dummy columns.<br>
 							As for the Reviews column, we will use TFIDF to help us filter the words and retain significant
@@ -199,7 +199,9 @@
 							Random Forest is an ensemble method that applies Bagging techniques to train multiple decision trees on different parts of the same training set, and averages them with the aim of reducing variance.
 							Finally Gradient Boosting is an ensemble method that tries to fit subsequent models to the residuals of the last model in a sequential manner in order to reduce bias.
 							These 4 regressors provide a good coverage of regularization, bagging and boosting techniques to help us better understand our results.<br><br>
-							Among the 4 models, Grad Boosting gave the best accuracy scores (0.884).
+							Among the 4 models, Grad Boosting gave the best accuracy scores (0.884). The regression models have shown that specific wineries (typically French and Italian), regions, a couple of varieties and points are positively correlated to wine prices and hence are good predictors of the higher ranges of prices.
+							On the other hand, specific words like 'value', 'inexpensive', 'best buy' and 'bargain' are negatively correlated, and hence they are associated with the lower ranges of wine prices. If we think about it, what really determine/set the price of wines, should be famous wineries,
+							their skill at wine-making, species of grapes, climactic conditions, techniques of fermenting, aging process, and bottling. Hence our finding makes a lot of sense.
 						</p>
 
 					</div>
@@ -271,14 +273,22 @@
 			<!-- Seven -->
 			<article id="seven" class="post style3">
 				<div class="image">
-					<img src="images/Textreviewsamples.png" width="450" height="700" data-position="100% center" />
+					<video width="750" height="700" data-position="75% center" controls loop>
+						<source src="video/trainingresults.m4v" type="video/mp4">
+					Your browser does not support the video tag.
+					</video>
 				</div>
 				<div class="content">
 					<div class="inner">
 						<header>
-							<h3><a >Samples </a></h3>
+							<h3><a >Results of the training </a></h3>
 						</header>
-						<p>........</p>
+						<p>After 100 batches: <br>The neural net couldn't predict anything yet, and it was only able to generate gibberish text....<br><br>
+						After 2500 batches: <br>Now it starts to predict some characters, and it's starting to learn the positions of the spaces. However, it's still not able to spell any English words.<br><br>
+						After 10000 batches:<br>It's able to spell many English words correctly and it also learned title case. There are still many spelling mistakes though and
+						it's hard to figure out what it's trying to express in each sentence.<br><br>
+						After 50000 batches:<br>It's now able to spell most words correctly, even long words like "concentrated", it was consistently able to spell it correctly.
+						</p>
 
 					</div>
 					<div class="postnav">
@@ -289,16 +299,26 @@
 			</article>
 
 			<!-- Eight -->
-			<article id="seven" class="post invert style3 alt">
-				<div class="image">
-					<img src="images/.png" width="250" height="200" data-position="100% center" />
+			<article id="seven" class="post invert style2 alt">
+				<div class="image" style="width: 1000px; height: 700px;">
+					<img src="images/finalslide2.png"  data-position="100% right" />
 				</div>
 				<div class="content">
 					<div class="inner">
 						<header>
-							<h2><a >Samples</a></h2>
+							<h3><a >Conclusion and future work</a></h3>
 						</header>
-						<p>........</p>
+						<p>Overall, I'm pleased to see that my model is able to spell English words properly at the end, and also understands punctuation positions.
+							Even the sentence structure is quite complete too. While the content of the text may be a little limited, this is after all largely dependent
+							on the quality of the text corpus and I think it's not too bad for an initial attempt. Further processing and shaping of the text reviews is
+							required to improve the quality of the text generation for sure.<br><br>
+							Future work:
+							<li>Increasing the input sequence length and/or number of hidden layers to improve accuracy.</li>
+							<li>Using the Word2Vec model to create a word embedding layer to the RNN to generate word sequences instead of character sequences.</li>
+							<li>Filter out those reviews with Positive sentiment scores to let the neural net learn only 'biased', but 'attractive' text reviews.</li>
+							<li>Using the RNN with word embeddings layer to try to classify the 632 varieties of wine. </li>
+
+						</p>
 
 					</div>
 					<div class="postnav">
