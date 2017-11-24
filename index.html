@@ -33,7 +33,7 @@
 		<!-- Banner -->
 			<section id="banner">
 				<div class="inner">
-					<h1>This website is created to publish my Capstone Project for GA DSI course 2017<br /> <font color='orange'>Best viewed with <a href="https://www.mozilla.org/en-US/firefox/" class="icon fa-firefox"><span class="label">Firefox</span></a> </font>
+					<h1>This website is created to publish my Capstone Project for GA DSI course 2017<br /> <font color='orange'>Best viewed with <a href="https://www.mozilla.org/en-US/firefox/" class="icon fa-firefox"><span class="label">Firefox</span></a> Firefox</font>
 						<br>Still work in progress.....<br /></h1>
 					<ul class="actions">
 						<li><a href="#one" class="button alt scrolly big">Continue</a></li>
@@ -57,12 +57,12 @@
 
 						</header>
 						<p style="text-align:justify;">Wine has been produced for thousands of years. The earliest known winery is the 6100-year-old Areni-1 winery in Armenia. Throughout history, wine has been consumed for its intoxicating effects.
-
 							Wine tasting is the sensory examination and evaluation of wine by experts. A wine sommelier, also known as "wine steward", is such a specialist wine expert in charge of developing a restaurant's wine list, and assisting customers with their selections (especially food-wine pairings). A wine critic is an expert and/or journalist who tastes and reviews wines for books and magazines. Wine producers would traditionally work closely with these professions in order to create the most appropriate or appealing wine reviews in order to entice customers to purchase their wines.
-
 							I would like to help these wine producers analyse a dataset of wine reviews written by these Wine Enthusiasts,
 							specifically to find out if the reviews reflect accurately the wine quality, its price and/or its variety - what are the typical descriptors used to identify highly priced wines, and
-							also how to extract creative value from this huge library of wine reviews to create a review generator of our own.
+							also how to extract creative value from this huge library of wine reviews to create a review generator of our own (i.e. to generate
+							sample reviews in an automated manner). This would be of value to wine producers as they can use these sample text descriptions for various non-critical business uses such as labeling,
+							educational materials, flyers etc.
 						</p>
 
 					</div>
@@ -202,8 +202,8 @@
 							Random Forest is an ensemble method that applies Bagging techniques to train multiple decision trees on different parts of the same training set, and averages them with the aim of reducing variance.
 							Finally Gradient Boosting is an ensemble method that tries to fit subsequent models to the residuals of the last model in a sequential manner in order to reduce bias.
 							These 4 regressors provide a good coverage of regularization, bagging and boosting techniques to help us better understand our results.<br><br>
-							Among the 4 models, Grad Boosting gave the best accuracy scores (0.884). The regression models have shown that specific wineries (typically French and Italian), regions, a couple of varieties and points are positively correlated to wine prices and hence are good predictors of the higher ranges of prices.
-							On the other hand, specific words like 'value', 'inexpensive', 'best buy' and 'bargain' are negatively correlated, and hence they are associated with the lower ranges of wine prices. If we think about it, what really determine/set the price of wines, should be famous wineries,
+							Among the 4 models, Grad Boosting gave the best accuracy scores (0.884). The regression models have shown that <b><font color="light blue"> specific wineries (typically French and Italian), regions, a couple of varieties and points </font> </b>are positively correlated to wine prices and hence are good predictors of the higher ranges of prices.
+							On the other hand, specific words like <b><font color="maroon">'value', 'inexpensive', 'best buy' and 'bargain' </font></b> are negatively correlated, and hence they are associated with the lower ranges of wine prices. If we think about it, what really determine/set the price of wines, should be famous wineries,
 							their skill at wine-making, species of grapes, climactic conditions, techniques of fermenting, aging process, and bottling. Hence our finding makes a lot of sense.
 						</p>
 
@@ -245,22 +245,28 @@
 			<!-- Eight -->
 			<article id="seven" class="post style3">
 
-					<div style="width: 1300px; height: 300px;margin-right: 80px;margin-left: 40px">
+					<div style="width: 1320px; height: 400px;margin-right: 50px;margin-left: 40px">
 						<header>
 							<h3><a>Variety classification</a></h3>
 						</header>
-						<p style="font-size:15px;text-align:justify;">As for wine variety, although the classification scores are not that bad, I still feel that the data present in this dataset is not sufficient for the models to classify wine
+						<p style="font-size:14px;text-align:justify;">As for wine variety, Random Forest returned a list of fruit-related words as being associated with the 3 varieties of wine - "cherry", "pineapple", "cassis", "tannins", "blackberry", "pear", "cola", "apple", "silky", "peach" while
+						Logistic Regression gave a list of names of other wine varieties such as "pinot blanc","barbera", "barolo", "brunello", "prosecco", "pinotage", "malvasia", "chenin", "amarone", "petite", "nebbiolo", "garnacha", "semillon", "verdejo".<br>
+						A very ripe Chardonnay will have flavors more towards tropical fruits like pineapple, guava and mango. A barely ripe Chardonnay will have green apple, pear or lemon flavors.<br>
+						Pinot Noir derives its lighter color from red-fruits such as cherry, cranberry and strawberry while Cabernet Sauvignon derives its dark color from dark fruits such as blackcurrant and blackberry.<br>
+						Although Pinot Blanc is top of the list returned by Logistic Regression, it should not be confused with Pinot Noir, because they are different grapes. Pinot Noir is a black wine grape with green flesh, while Pinot Blanc is a white grape
+						that is often confused with Chardonnay. Pinot Blanc is very similar to a Chardonnay in that it has a medium to full body and light flavor. Its lighter flavors often include citrus, melon, pear, apricot, and perhaps smokey or mineral undertones.<br>
+						Although the classification scores are not that bad, I still feel that the data present in this dataset is not sufficient for the models to classify wine
 						varieties with high accuracy and precision. Just based on review text, the models are only able to draw vague relationships to fruits and similarity with other varieties at best.
 						If we consider all the factors affecting the varieties of wine, we will understand why this data-set is lacking in a lot of information:
 						<br><br>
 						1. Many of the varieties are close relations of one another in terms of genealogy (e.g. Pinot Noir, Pinot Grigio, Pinot Blanc), but yet they have very different colors and properties. They may be grown in the same region, but may also be cultivated in other geographically very different regions.
-						<br><br>
+						<br>
 						2. Nearly all the varieties can have different flavors of fruits as a result of different degrees or process of aging. Genealogically different species of grapes like Chardonnay and Pinot Blanc can thus have similar citrus, or pear flavors depending on their age.
-						<br><br>
+						<br>
 						3. Due to historical and geographical reasons, some of the names of grapes or their corresponding wines can be different depending on the country of origin. For example, in France, it's called Pinot Gris, while in Italy it's called Pinot Grigio. They are in fact the same grape, just grown in different places. Another example is Pinot Blanc in France, and it's called Pinot Bianco in Italy. Without explicitly declaring such naming differences in the dataset, models will always mix them up.
-						<br><br>
+						<br>
 						4. Some of the varieties can be so close in taste, scent and color that even domain experts themselves cannot tell apart. In such cases, only minute chemical property differences or even isotopic distribution differences can differentiate them. This means that only if we can somehow get those chemical and physical properties data for the wine varieties in this data-set to supplement this review and geo-location data, can we have more confidence in getting the model to classify varieties more accurately.
-						<br><br>
+						<br>
 						5. Due to subtle differences in climate conditions, the quality of harvest of a particular grape variety in one year, could be slightly different from another year. This may be reflected in the flavor or undertone of the final wine product. Hence, the domain expert may be able to detect such subtle differences in a blind tasting session, but on consultation with the wine producer and getting more information about the harvests, he may then understand why they are actually from the same grape. Such harvest data is not collected in the data-set, but is still an important factor in classifying wine variety.
 						</p>
 					</div>
@@ -285,7 +291,7 @@
 							I'm pleased to find that it was able to associate "scent" -> "aroma", "sugary" -> "taste", "dollar" -> "price", "promise" -> "potential", "chop" -> "steak".<br>
 							I also gave it two distinct wine variety names "chardonnay" which is a white wine, and "cabernet" which is a red wine. The model was able to tell me a
 							list of white wine variety names such as <b><font color="light blue">"albarino", "grigio", "riesling", "semillon", "gris", "blanc"</font></b> that are related to "chardonnay" as well as a list of red wine variety names such as
-							<b><font color="tomato">"merlot", "syrah", "claret", "malbec" and "sauvignon" </font></b>that are related to "cabernet". This shows that the model was able to learn the colour of wine names from the context!!
+							<b><font color="maroon">"merlot", "syrah", "claret", "malbec" and "sauvignon" </font></b>that are related to "cabernet". This shows that the model was able to learn the colour of wine names from the context!!
 						</p>
 
 					</div>
@@ -306,7 +312,14 @@
 						<header>
 							<h3><a>Configuring our neural network</a></h3>
 						</header>
-						<p>
+						<p style="text-align:justify;">Now that we have characterized the text corpus and found it to be a rich source of information, we should start to think about how to
+							extract more creative value out of it, for example using it to build a text generative model. Recurrent Neural Nets are particularly designed to work with sequence dependent data (like our text
+							sequence). The backpropagation training step of RNNs is notoriously hard, mainly due to the
+							exploding or vanishing gradients issues. In order to minimize the possibility of them occurring, we shall
+							 be using a type of RNN cell called Gated Recurrent Unit (GRU), with Relu as the activation function instead of the default tanh,
+							 since they are known to help resolve these gradient issues. We will use <b><font color="orange"> Tensorflow </font></b> to create such a neural network
+							 with the above-mentioned elements. To train our network, we will implement a softmax with cross-entropy as our loss
+							 function and measure the accuracy by taking the mean of cell-wise logical comparison between the output and label tensors.
 						</p>
 
 					</div>
@@ -330,7 +343,7 @@
 						<header>
 							<h3><a>Training with characters</a></h3>
 						</header>
-						<p style="text-align:justify;">In order to train a neural network on generating text, we have to think of how to provide input to it and how to interpret its output.
+						<p style="text-align:justify;">Next, we have to think of how to provide input to it and how to interpret its output.
 							There are two types of input we can consider, characters and word embeddings. While Word2Vec model does provide a rich source of contextual information, character
 							level training is much easier to understand and visualise as compared to word embeddings. Also since we have noted that the text in this corpus is pretty clean, with
 							simple sentence structures, little to no connection between sentences in each document and hence little long-term dependencies and a narrow sentiment range, character level input makes a lot of sense.<br><br>
@@ -363,12 +376,13 @@
 						<header>
 							<h3><a >Recurrent Neural Net Model Architecture</a></h3>
 						</header>
-						<p style="text-align:justify;">Each RNN unit takes in a One-Hot vector representing a character as input, concatenates with the previous state H<sub>t−1</sub>
+						<p style="text-align:justify;">Each GRU unit takes in a One-Hot vector representing a character as input, concatenates with the previous state H<sub>t−1</sub>
 							then goes through a series of computations by the reset and update gates and generates an output state. This RNN unfolds over
-							the length of each sequence, taking in one character at a time, and at the end of each sequence, it predicts the next character
-							after the end of that sequence. This predicted output is subjected to softmax computation to generate a probability, and the
-							argmax of the highest probability gives the most likely character candidate. Accuracy is measured by the mean of cell-wise comparison
-							between this predicted character vector with the actual label vector.</p>
+							the length of a sequence of 30 characters, taking in one character at a time, and at the end of each sequence, it predicts the next character
+							after the end of that sequence. <br><br>
+							To train the network, I used AdamOptimizer to perform backpropagation by taking the loss function as an input and updating the weights and biases of each GRU unit.
+							The loss function is computed by taking the softmax cross-entropy of the predicted output.<br>
+							As a measure of performance, I defined accuracy as the mean of cell-wise comparison between this predicted character vector with the actual label vector.</p>
 					</div>
 					<div class="postnav">
 						<a href="#ten" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
